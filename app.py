@@ -316,7 +316,7 @@ def handle_message(event):
                                             IconComponent(
                                                 url='https://i.imgur.com/Ye12a4V.png'),
                                             TextComponent(
-                                                text='直觀察看熱門景點動態',
+                                                text='直觀查看熱門景點動態',
                                                 color='#666666',
                                                 size='sm',
                                                 flex=1
@@ -356,6 +356,29 @@ def handle_message(event):
                                     uri='https://github.com/changsuwi/Travel-Photography'
                                 ),
                             ),
+                        ]
+                    ),
+                ),
+                BubbleContainer(
+                    direction='ltr',
+                    hero=ImageComponent(
+                        url='https://i.imgur.com/kj7UJcl.jpg',
+                        size='full',
+                        aspect_ratio='20:13',
+                        aspect_mode='cover',
+                        gravity='center'
+                    ),
+                    footer=BoxComponent(
+                        layout='vertical',
+                        spacing='sm',
+                        contents=[
+                            ButtonComponent(
+                                style='link',
+                                height='sm',
+                                action=URIAction(
+                                    label='查看其他github專案',
+                                    uri='https://github.com/changsuwi'),
+                            )
                         ]
                     ),
                 ),
