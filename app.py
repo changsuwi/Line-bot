@@ -167,7 +167,7 @@ def handle_message(event):
                 ]
             ),
         )
-        message = FlexSendMessage(alt_text="hello", contents=bubble)
+        message = FlexSendMessage(alt_text="自我介紹", contents=bubble)
         line_bot_api.reply_message(
             event.reply_token,
             message
@@ -386,7 +386,7 @@ def handle_message(event):
 
             ]
         )
-        message = FlexSendMessage(alt_text="hello", contents=carousel)
+        message = FlexSendMessage(alt_text="開發專案經驗", contents=carousel)
         line_bot_api.reply_message(
             event.reply_token,
             message
@@ -460,12 +460,12 @@ def handle_message(event):
                 ]
             ),
         )
-        message = FlexSendMessage(alt_text="hello", contents=bubble)
+        message = FlexSendMessage(alt_text="自我推薦", contents=bubble)
         line_bot_api.reply_message(
             event.reply_token,
             message)
     elif text == '試玩Konma Bot':
-        message = FlexSendMessage(alt_text="hello", contents=get_video())
+        message = FlexSendMessage(alt_text="試玩Konma Bot", contents=get_video())
 
         line_bot_api.reply_message(
             event.reply_token,
