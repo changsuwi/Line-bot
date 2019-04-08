@@ -11,7 +11,8 @@ from linebot.models import (
     MessageAction, URIAction,
     FlexSendMessage, BubbleContainer, ImageComponent, BoxComponent,
     TextComponent, SpacerComponent, IconComponent, ButtonComponent,
-    SeparatorComponent, QuickReply, QuickReplyButton, CarouselContainer
+    SeparatorComponent, QuickReply, QuickReplyButton, CarouselContainer,
+    ImageMessage, VideoMessage, AudioMessage, StickerMessage, LocationMessage
 )
 
 from db import get_video
@@ -503,6 +504,21 @@ def handle_message(event):
             user_id,
             message
         )
+    else:
+        message = TextSendMessage(text='請點選主選單，點擊有興趣的項目，謝謝')
+        line_bot_api.reply_message(
+            event.reply_token,
+            message
+        )
+
+
+@handler.add(MessageEvent, message=(ImageMessage, VideoMessage, AudioMessage, StickerMessage, LocationMessage))
+def handle_content_message(event):
+    message = TextSendMessage(text='請點選主選單，點擊有興趣的項目，謝謝')
+    line_bot_api.reply_message(
+        event.reply_token,
+        message
+    )
 
 
 if __name__ == "__main__":
